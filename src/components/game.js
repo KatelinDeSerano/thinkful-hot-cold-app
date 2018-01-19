@@ -3,6 +3,8 @@ import './game.css';
 import Header from './header.js';
 import Feedback from './feedback.js';
 import Guess from './guess.js';
+import GuessCount from './guessCount.js';
+import GuessHistory from './guessHistory.js';
 
 class Game extends Component {
   render() {
@@ -12,6 +14,8 @@ class Game extends Component {
         <h1>HOT or COLD</h1>
         <Feedback />
         <Guess />
+        <GuessCount />
+        <GuessHistory />
 
       </div>
     );
