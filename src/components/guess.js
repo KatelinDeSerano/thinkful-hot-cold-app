@@ -3,10 +3,21 @@ import './guess.css';
 
 
 class Guess extends Component {
+
+  handleSubmit(event) {
+    event.preventDefault(); 
+    const value = this.input.value;
+    this.input.value = "";
+    console.log(value);
+  }
+
   render() {
     return (
       <div className="game-guess">
-        <h1>This is the Guess Form</h1>
+        <form onSubmit={e => this.handleSubmit(e)} > 
+          <input type="text" ref={input => (this.input=input)} />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     );
   }
