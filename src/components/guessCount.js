@@ -6,7 +6,7 @@ class GuessCount extends Component {
   render() {
     return (
       <div className="game-guessCount">
-        <h1>This is the Guess Count</h1>
+        <h1>{this.props.count}</h1>
       </div>
     );
   }

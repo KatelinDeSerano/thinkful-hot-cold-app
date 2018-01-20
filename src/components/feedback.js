@@ -6,7 +6,7 @@ class Feedback extends Component {
   render() {
     return (
       <div className="game-feedback">
-        <h1>This is feedback</h1>
+        <h1>{this.props.feedback}</h1>
       </div>
     );
   }

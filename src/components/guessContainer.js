@@ -7,12 +7,13 @@ import GuessHistory from './guessHistory.js';
 
 class GuessContainer extends Component {
   render() {
+    const count = this.props.guesses.length;
     return (
       <div className="guessContainer">
         <h1>HOT or COLD</h1>
-        <Feedback />
+        <Feedback feedback={this.props.feedback} />
         <Guess />
-        <GuessCount />
+        <GuessCount count={count}/>
         <GuessHistory />
       </div>
     );
