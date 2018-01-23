@@ -6,16 +6,29 @@ class Guess extends Component {
 
   handleSubmit(event) {
     event.preventDefault(); 
-    const value = this.input.value;
+    
+    if (this.props.userGuess) {
+      console.log("clicked");
+      const value = this.input.value;
+      this.props.userGuess(value);
+      
+    }
+
     this.input.value = "";
-    console.log(value);
+    
   }
 
   render() {
     return (
       <div className="game-guess">
         <form onSubmit={e => this.handleSubmit(e)} > 
-          <input type="text" ref={input => (this.input=input)} />
+          <input 
+          type="number" 
+          min="1"
+          max="100"
+          ref={input => (this.input=input)}
+          required
+           />
           <button type="submit">Submit</button>
         </form>
       </div>

@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './guessHistory.css';
 
 
-class GuessHistory extends Component {
-  render() {
+function GuessHistory(props) {
+  
+  const guessList = props.guesses.map((guess, index) => (
+    <li key={index}>
+      {guess}
+    </li>
+  ));
+
     return (
       <div className="game-guessHistory">
-        <h1>This is the Guess History</h1>
+        <span>{guessList}</span>
       </div>
     );
+ 
   }
-}
+
 
 export default GuessHistory;

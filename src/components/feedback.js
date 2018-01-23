@@ -12,4 +12,4 @@ class Feedback extends Component {
   }
 }
 
-export default Feedback;
+export default Feedback

@@ -4,9 +4,10 @@ import './guessCount.css';
 
 class GuessCount extends Component {
   render() {
+    const count = this.props.guesses.length;
     return (
       <div className="game-guessCount">
-        <h1>{this.props.count}</h1>
+        <h1>{count}</h1>
       </div>
     );
   }
