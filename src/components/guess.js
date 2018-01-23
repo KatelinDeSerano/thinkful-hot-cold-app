@@ -22,8 +22,7 @@ class Guess extends Component {
     return (
       <div className="game-guess">
         <form onSubmit={e => this.handleSubmit(e)} > 
-          <input 
-          type="number" 
+          <input  
           min="1"
           max="100"
           ref={input => (this.input=input)}

@@ -59,7 +59,7 @@ class Game extends Component {
     const {feedback, guesses} = this.state;
     return (
       <div className="game">
-        <Header onRestartGame={() => this.props.onRestartGame()} /> 
+        <Header restartGame={() => this.restartGame()} /> 
       
         <Feedback feedback={feedback} />
         <Guess userGuess={guess => this.userGuess(guess)} />

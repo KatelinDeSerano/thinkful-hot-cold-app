@@ -19,7 +19,7 @@ export default function Header(props) {
             href="#feedback"
             className="new"
             
-            onClick={() => props.onRestartGame()}
+            onClick={() => props.restartGame()}
           >
             + New Game
           </a>
