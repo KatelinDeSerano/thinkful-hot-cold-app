@@ -16,9 +16,41 @@ class Game extends Component {
       guesses: []
     };
   }
+
   userGuess(guess) {
+
+    if (isNaN(guess)) {
+      this.setState({ feedback: 'Please enter a valid number' });
+      return;
+    }
+    
+    const answerDifference = Math.abs(guess - this.state.correctAnswer);
+    console.log(this.state.correctAnswer);
+    
+    let feedback;
+    if (answerDifference >= 50) {
+      feedback = 'You\'re Ice Cold...';
+    } else if (answerDifference >= 30) {
+      feedback = 'You\'re Cold...';
+    } else if (answerDifference >= 10) {
+      feedback = 'You\'re Warm.';
+    } else if (answerDifference >= 1) {
+      feedback = 'You\'re Hot!';
+    } else {
+      feedback = 'You got it!';
+    }
+
     this.setState({
+      feedback,
       guesses: [...this.state.guesses, guess]
+    });
+  }
+
+  restartGame() {
+    this.setState({
+      guesses: [],
+      feedback: 'Make your guess!',
+      correctAnswer: Math.floor(Math.random()*100)+1
     });
   }
 
@@ -27,10 +59,10 @@ class Game extends Component {
     return (
       <div className="game">
         <Header /> 
-        <Feedback feedback={feedback}/>
-        <Guess userGuess={guess => this.userGuess(guess)}/>
-        <GuessCount guesses={guesses}/>
-        <GuessHistory guesses={guesses}/>
+        <Feedback feedback={feedback} />
+        <Guess userGuess={guess => this.userGuess(guess)} />
+        <GuessCount guesses={guesses} />
+        <GuessHistory guesses={guesses} />
       </div>
     );
   }
