@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './feedback.css';
 
-
-class Feedback extends Component {
-  render() {
-    return (
-      <div className="game-feedback">
-        <h1>{this.props.feedback}</h1>
-      </div>
-    );
-  }
+export default function Feedback(props) {
+ 
+  return (
+    <h2 id="feedback">
+      {props.feedback} 
+    </h2>
+  );
 }
-
-export default Feedback

@@ -1,15 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './header.css';
 
 
-class Header extends Component {
-  render() {
-    return (
-      <div className="game-header">
-        <h1>This is a header</h1>
-      </div>
-    );
-  }
+export default function Header(props) {
+  return (
+    <nav>
+      <ul className="clearfix">
+        <li>
+          <a 
+            href="#what" 
+            className="what"
+          >
+            What?
+          </a>
+        </li>
+        <li>
+          <a
+            href="#feedback"
+            className="new"
+            
+            onClick={() => props.onRestartGame()}
+          >
+            + New Game
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
-export default Header;

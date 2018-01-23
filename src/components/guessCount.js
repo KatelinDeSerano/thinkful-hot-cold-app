@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './guessCount.css';
 
 
-class GuessCount extends Component {
-  render() {
-    const count = this.props.guesses.length;
-    return (
-      <div className="game-guessCount">
-        <h1>{count}</h1>
-      </div>
-    );
-  }
-}
+export default function GuessCount(props) {
 
-export default GuessCount;
+  const count = props.guesses.length;
+  const isPlural = props.guesses.length !== 1;
+  const guessNoun = isPlural ? 'guesses' : 'guess';
+
+  return (
+      <h2 id="guessCount">
+          You've made <span id="count">{count}</span> {guessNoun}!
+      </h2>
+  );
+}

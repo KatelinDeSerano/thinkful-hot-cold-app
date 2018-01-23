@@ -11,9 +11,9 @@ function GuessHistory(props) {
   ));
 
     return (
-      <div className="game-guessHistory">
-        <span>{guessList}</span>
-      </div>
+      <ul className="guessBox clearfix">
+        {guessList}
+      </ul>
     );
  
   }
